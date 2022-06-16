@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className="flex-none ml-5">
           <ul className="menu menu-horizontal p-0">
             <li className="">
-              <Link to="/signIn" className="btn btn-primary text-white">
+              <Link to="/signIn" className="btn btn-primary btn-outline text-white">
                 Sign In
               </Link>
             </li>

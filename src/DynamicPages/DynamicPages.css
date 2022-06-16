@@ -1,0 +1,10 @@
+/* all styles for sign in, sign up and single cards are here*/
+
+.card-signIn{
+    width: 40%;
+    padding-top: 25px !important;
+    margin-left: 30%;
+    margin-right: 30%;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
