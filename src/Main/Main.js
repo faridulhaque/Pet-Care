@@ -1,5 +1,6 @@
 import React from "react";
 import Banner from "../Home/Banner";
+import PetShop from "../Home/PetShop";
 import Services from "../Home/Services";
 import Navbar from "../Shared/Navbar/Navbar";
 
@@ -9,6 +10,7 @@ const Main = () => {
       
       <Banner></Banner>
       <Services></Services>
+      <PetShop></PetShop>
     </div>
   );
 };

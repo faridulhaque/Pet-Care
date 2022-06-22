@@ -11,7 +11,12 @@
 
 /* style for services section in home page */
 
+.services-cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
 
+}
 .service-card {
 
     width: 230px;

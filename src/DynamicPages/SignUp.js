@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <div className="card card-shadow-2xl bg-100 card-signIn mt-10">
@@ -38,7 +40,11 @@ const SignUp = () => {
               placeholder="Re-enter your password"
               className="input input-bordered"
             />
-            
+            <label className="label">
+            <button onClick={()=> (navigate('/signIn'))} className="label-text-alt link link-hover">
+              Already have an account?
+            </button>
+          </label>
           </div>
           <div className="form-control mt-6">
             <button className="btn btn-primary">Sign in</button>
