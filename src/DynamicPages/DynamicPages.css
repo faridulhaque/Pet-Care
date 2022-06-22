@@ -1,10 +1,67 @@
 /* all styles for sign in, sign up and single cards are here*/
 
-.card-signIn{
+.card-signIn {
     width: 40%;
     padding-top: 25px !important;
     margin-left: 30%;
     margin-right: 30%;
     box-sizing: border-box;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* style for services section in home page */
+
+
+.service-card {
+
+    width: 230px;
+    height: 450px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+}
+
+.service-card-top-style {
+    
+
+    height: 75px;
+    display: flex;
+    align-items: center;
+}
+
+
+.button-service-card {
+    position: absolute;
+    bottom: 20px;
+}
+
+/* responsive for mobile devices */
+
+@media screen and (max-width: 570px) {
+    /* responsive sign in and sign up page  */
+
+    .card-signIn {
+        width: 90%;
+
+        margin-left: 5%;
+        margin-right: 5%;
+        box-sizing: border-box;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    /* responsive service cards */
+    .services-cards-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+    
+    }
+    .service-card {
+
+        width: 90%;
+        height: 550px;
+        margin-bottom: 40px;
+        box-sizing: border-box;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        position: relative;
+    }
 }

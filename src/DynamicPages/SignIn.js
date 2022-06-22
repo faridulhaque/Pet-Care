@@ -6,7 +6,7 @@ const SignIn = () => {
     <div>
       
         
-      <div className="card card-shadow-2xl bg-100 card-signIn mt-20">
+      <div className="card card-shadow-2xl bg-100 card-signIn mt-10">
       <h1 className="text-center text-primary text-4xl font-bold">
         Sign In to Continue...
       </h1>
@@ -37,7 +37,10 @@ const SignIn = () => {
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
+          <button className="btn btn-primary">Sign in</button>
+        </div>
+        <div className="form-control mt-6">
+          <button className="btn btn-outline btn-primary">Sign in with google</button>
         </div>
       </div>
       </div>

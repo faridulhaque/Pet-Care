@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import ServiceDetail from "./DynamicPages/ServiceDetail";
 import SignIn from "./DynamicPages/SignIn";
 import SignUp from "./DynamicPages/SignUp";
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Main></Main>}></Route>
         <Route path="/signUp" element={<SignUp></SignUp>}></Route>
         <Route path="/signIn" element={<SignIn></SignIn>}></Route>
+        <Route path="/home/:id" element={<ServiceDetail></ServiceDetail>}></Route>
       </Routes>
     </div>
   );
