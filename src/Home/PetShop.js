@@ -7,7 +7,7 @@ const PetShop = () => {
       style={{ height: "300px", display: "flex", alignItems: "center" }}
     >
       <div>
-        <h2 className="text-3xl text-center text-primary my-5">
+        <h2 className="text-3xl text-center text-primary my-5" >
           Are you worried about your pets' foods or medicines?{" "}
         </h2>
         <p className="mx-20 text-center text-secondary">

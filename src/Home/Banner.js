@@ -17,7 +17,7 @@ const Banner = () => {
             </p>
             <button
               onClick={() => navigate("/signUp")}
-              className="btn btn-primary text-white"
+              className="btn btn-secondary text-white"
             >
               Get Started
             </button>

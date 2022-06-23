@@ -5,7 +5,7 @@ const Footer = () => {
     <div>
       <footer style={{height: '100px', display: 'flex', alignItems: 'center', justifyContent: 'center'}} className="bg-secondary">
         <div>
-          <p className='text-center text-primary'>©Pet Care 2022 - All right reserved</p>
+          <p className='text-center text-white'>©Pet Care 2022 - All right reserved</p>
         </div>
       </footer>
     </div>
