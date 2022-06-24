@@ -5,6 +5,7 @@ import {
   useCreateUserWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
+import Loading from "../Shared/Loading/Loading";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -62,7 +63,7 @@ const SignUp = () => {
   };
   // handle user and loading
   if (loading || gLoading) {
-    return <p>Loading...</p>;
+    return <Loading></Loading>;
   }
   if (user || gUser) {
     navigate(form, { replace: true });

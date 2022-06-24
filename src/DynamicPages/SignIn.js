@@ -5,6 +5,7 @@ import {
 } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import { auth } from "../firebase/Firebase.init";
+import Loading from "../Shared/Loading/Loading";
 import "./DynamicPages.css";
 
 const SignIn = () => {
@@ -42,7 +43,7 @@ const SignIn = () => {
   };
   // handle loading and user
   if (loading || gLoading) {
-    return <p>Loading...</p>;
+    return <Loading></Loading>;
   }
   if(user || gUser) {
       navigate(form, {replace: true});
