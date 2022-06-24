@@ -1,9 +1,13 @@
 import React from "react";
 import pet from "../assets/bannerCat.png";
 import { useNavigate } from "react-router-dom";
+import { auth } from "../firebase/Firebase.init";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const Banner = () => {
   const navigate = useNavigate();
+  const [user, loading, error] = useAuthState(auth);
+
   return (
     <div>
       <div className="hero min-h-fit bg-base-100 mt-10">
@@ -15,12 +19,15 @@ const Banner = () => {
               Hi! This is Doctor Alina! I work as a vet in Dhaka with four years
               of experience. I try to make a better world for your pets.
             </p>
-            <button
+            {
+              !user && <button
               onClick={() => navigate("/signUp")}
               className="btn btn-secondary text-white"
             >
               Get Started
             </button>
+            }
+            
           </div>
         </div>
       </div>
