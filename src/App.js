@@ -7,6 +7,7 @@ import SignUp from "./DynamicPages/SignUp";
 import Main from "./Main/Main";
 import Footer from "./Shared/Footer/Footer";
 import Navbar from "./Shared/Navbar/Navbar";
+import RequireAuth from "./Shared/RequireAuth/RequireAuth";
 
 function App() {
   return (
@@ -19,7 +20,11 @@ function App() {
         <Route path="/signIn" element={<SignIn></SignIn>}></Route>
         <Route
           path="/home/:id"
-          element={<ServiceDetail></ServiceDetail>}
+          element={
+            <RequireAuth>
+              <ServiceDetail></ServiceDetail>
+            </RequireAuth>
+          }
         ></Route>
       </Routes>
       <Footer></Footer>

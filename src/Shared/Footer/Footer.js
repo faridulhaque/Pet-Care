@@ -1,6 +1,7 @@
 import React from "react";
 
 const Footer = () => {
+  
   return (
     <div>
       <footer style={{height: '100px', display: 'flex', alignItems: 'center', justifyContent: 'center'}} className="bg-secondary">

@@ -1,13 +1,23 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
+import { useLocation, useNavigate } from "react-router-dom";
+import { auth } from "../firebase/Firebase.init";
 import "./DynamicPages.css";
 
 const SignIn = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  let form = location.state?.from?.pathname || "/";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
   // codes for email validation
   const handleEmail = (email) => {
@@ -30,6 +40,13 @@ const SignIn = () => {
       setPassword("");
     }
   };
+  // handle loading and user
+  if (loading || gLoading) {
+    return <p>Loading...</p>;
+  }
+  if(user || gUser) {
+      navigate(form, {replace: true});
+  }
 
   return (
     <div>
@@ -64,30 +81,26 @@ const SignIn = () => {
             {passwordError && (
               <small className="text-primary">{passwordError}</small>
             )}
-            {/* <label className="label">
-              <button className="label-text-alt link link-hover">
-                Forgot password?
-              </button>
-            </label> */}
-            <label className="label">
-              <button
-                onClick={() => navigate("/signUp")}
-                className="label-text-alt link link-hover"
-              >
-                Not a member?
-              </button>
-            </label>
           </div>
+          <small
+            onClick={() => navigate("/signUp")}
+            className="navigation-text"
+          >
+            Not a member?
+          </small>
           <div className="form-control mt-6">
             <button
-              onClick={() => console.log(email, password)}
+              onClick={() => signInWithEmailAndPassword(email, password)}
               className="btn btn-secondary"
             >
               Sign in
             </button>
           </div>
           <div className="form-control mt-6">
-            <button className="btn btn-outline btn-secondary">
+            <button
+              onClick={() => signInWithGoogle()}
+              className="btn btn-outline btn-secondary"
+            >
               Sign in with google
             </button>
           </div>
