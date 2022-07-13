@@ -25,7 +25,7 @@ const Services = () => {
                 <img className="service-card-img" src={d.img} alt="pet"/>
             </div>
             <div className="mx-3 mt-5">
-              <p className="text-secondary text-justify">{d.comment}</p>
+              <p className="text-black text-justify">{d.comment}</p>
               <div className="card-actions justify-start">
                 <button onClick={()=>(navigate(`/home/${d.id}`))} className="btn btn-secondary text-white button-service-card">
                   See More
